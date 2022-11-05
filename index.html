@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="navbar">
-    <button class="reset-button">Reset</button>
+    <button class="reset-button" onclick="reset()">Reset</button>
   </div>
 
   <div class="score-container">
@@ -21,11 +21,11 @@
   </div>
 
   <div class="choices">
-    <h2>Choose one:</h2>
+    <h2 id="choose">Choose one:</h2>
     <div class="images">
-      <img class="rock" src="./assets/rock.png" alt="rock">
-      <img class="paper" src="./assets/paper.png" alt="paper">
-      <img class="scissors" src="./assets/scissors.png" alt="scissors">
+      <img class="rock" src="./assets/rock.png" alt="rock" onclick="rock()">
+      <img class="paper" src="./assets/paper.png" alt="paper" onclick="paper()">
+      <img class="scissors" src="./assets/scissors.png" alt="scissors" onclick="scissors()">
     </div>
   </div>
   <script src="app.js"></script>

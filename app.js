@@ -1,11 +1,10 @@
-//let user = prompt("Rock Paper or Scissors?: ").toLowerCase();
+let userScore = 0;
+let computerScore = 0;
 
 function computerChoice() {
   let choices = ["rock", "paper", "scissors"];
   return choices[Math.floor((Math.random()*choices.length))];
 }
-
-let computer = computerChoice();
 
 function calcWin(user, computer) {
   if (user === computer) {
@@ -31,4 +30,44 @@ function calcWin(user, computer) {
   }
 }
 
-console.log(user + " vs " + computer + " " + calcWin(user, computer))
+function run(userChoice) {
+  let computer = computerChoice();
+
+  let winner = calcWin(userChoice, computer);
+  if (winner === "Player Wins!") {
+    userScore++;
+  }
+  else if (winner === "Computer Wins!") {
+    computerScore++;
+  }
+  document.getElementById("choose").textContent = "Computer chose " + computer + ". " + winner + " Choose again:";
+  document.getElementById("userScore").textContent = userScore.toString();
+  document.getElementById("computerScore").textContent = computerScore.toString();
+}
+
+function rock() {
+  let userChoice = "rock";
+
+  run(userChoice);
+}
+
+function paper() {
+  let userChoice = "paper";
+
+  run(userChoice);
+}
+
+function scissors() {
+  let userChoice = "scissors";
+
+  run(userChoice)
+}
+
+function reset() {
+  userScore = 0
+  computerScore = 0
+
+  document.getElementById("userScore").textContent = userScore.toString();
+  document.getElementById("computerScore").textContent = computerScore.toString();
+  document.getElementById("choose").textContent = "Choose one:";
+}
