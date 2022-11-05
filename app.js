@@ -1,4 +1,4 @@
-let user = prompt("Rock Paper or Scissors?: ").toLowerCase();
+//let user = prompt("Rock Paper or Scissors?: ").toLowerCase();
 
 function computerChoice() {
   let choices = ["rock", "paper", "scissors"];
