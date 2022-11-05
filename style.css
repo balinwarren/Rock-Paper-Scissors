@@ -31,6 +31,13 @@ body {
 }
 
 .score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.score-text {
   font-size: 200px;
   font-weight: 900;
   color: white;
