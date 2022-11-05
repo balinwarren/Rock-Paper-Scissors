@@ -24,6 +24,11 @@ body {
   text-shadow: 3px 1px 5px rgba(0, 0, 0, .3);
 }
 
+.reset-button:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
 .score-container {
   display: flex;
   justify-content: center;
