@@ -40,27 +40,55 @@ function run(userChoice) {
   else if (winner === "Computer Wins!") {
     computerScore++;
   }
-  document.getElementById("choose").textContent = "Computer chose " + computer + ". " + winner + " Choose again:";
+  checkScore(userScore, computerScore, computer, winner);
   document.getElementById("userScore").textContent = userScore.toString();
   document.getElementById("computerScore").textContent = computerScore.toString();
+}
+
+function checkScore(userScore, computerScore, computer, winner) {
+  if (userScore === 5) {
+    document.getElementById("choose").textContent = "You have beat the computer, press reset to play again.";
+  }
+
+  else if (computerScore === 5) {
+    document.getElementById("choose").textContent = "You lost to the computer, press reset to play again";
+  }
+  else {
+    document.getElementById("choose").textContent = "Computer chose " + computer + ". " + winner + " Choose again:";
+  }
 }
 
 function rock() {
   let userChoice = "rock";
 
-  run(userChoice);
+  if (userScore === 5 || computerScore === 5) {
+    document.getElementById("choose").textContent = "Please press reset to start a new game";
+  }
+  else {
+    run(userChoice)
+  }
 }
 
 function paper() {
   let userChoice = "paper";
 
-  run(userChoice);
+  if (userScore === 5 || computerScore === 5) {
+    document.getElementById("choose").textContent = "Please press reset to start a new game";
+  }
+  else {
+    run(userChoice)
+  }
 }
 
 function scissors() {
   let userChoice = "scissors";
 
-  run(userChoice)
+  if (userScore === 5 || computerScore === 5) {
+    document.getElementById("choose").textContent = "Please press reset to start a new game";
+  }
+  else {
+    run(userChoice)
+  }
 }
 
 function reset() {
